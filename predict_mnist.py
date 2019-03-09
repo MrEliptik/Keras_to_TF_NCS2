@@ -5,12 +5,9 @@ import numpy as np
 import logging as log
 from time import time
 from openvino.inference_engine import IENetwork, IEPlugin
-from ImageProcessor import ImageProcessor
 
-processor = ImageProcessor()
-test_image = 'data/photo_6.jpg'
+test_image = 'data/6.jpg'
 input_image = cv2.imread(test_image)
-cropped_input, cropped = processor.preprocess_image(input_image)
 
 perf_counts = False
 
