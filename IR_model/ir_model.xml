@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <net batch="1" name="ir_model" version="4">
 	<layers>
-		<layer id="0" name="conv2d_1_input" precision="FP32" type="Input">
+		<layer id="0" name="conv2d_1_input" precision="FP16" type="Input">
 			<output>
 				<port id="0">
 					<dim>1</dim>
@@ -11,7 +11,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="1" name="conv2d_1/convolution" precision="FP32" type="Convolution">
+		<layer id="1" name="conv2d_1/convolution" precision="FP16" type="Convolution">
 			<data auto_pad="valid" dilations="1,1" group="1" kernel="3,3" output="16" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
@@ -30,11 +30,11 @@
 				</port>
 			</output>
 			<blobs>
-				<weights offset="0" size="576"/>
-				<biases offset="576" size="64"/>
+				<weights offset="0" size="288"/>
+				<biases offset="288" size="32"/>
 			</blobs>
 		</layer>
-		<layer id="2" name="conv2d_1/Relu" precision="FP32" type="ReLU">
+		<layer id="2" name="conv2d_1/Relu" precision="FP16" type="ReLU">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -52,7 +52,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="3" name="max_pooling2d_1/MaxPool" precision="FP32" type="Pooling">
+		<layer id="3" name="max_pooling2d_1/MaxPool" precision="FP16" type="Pooling">
 			<data auto_pad="valid" exclude-pad="true" kernel="2,2" pads_begin="0,0" pads_end="0,0" pool-method="max" strides="2,2"/>
 			<input>
 				<port id="0">
@@ -71,7 +71,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="4" name="conv2d_2/convolution" precision="FP32" type="Convolution">
+		<layer id="4" name="conv2d_2/convolution" precision="FP16" type="Convolution">
 			<data auto_pad="valid" dilations="1,1" group="1" kernel="3,3" output="32" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
@@ -90,11 +90,11 @@
 				</port>
 			</output>
 			<blobs>
-				<weights offset="640" size="18432"/>
-				<biases offset="19072" size="128"/>
+				<weights offset="320" size="9216"/>
+				<biases offset="9536" size="64"/>
 			</blobs>
 		</layer>
-		<layer id="5" name="conv2d_2/Relu" precision="FP32" type="ReLU">
+		<layer id="5" name="conv2d_2/Relu" precision="FP16" type="ReLU">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -112,7 +112,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="6" name="max_pooling2d_2/MaxPool" precision="FP32" type="Pooling">
+		<layer id="6" name="max_pooling2d_2/MaxPool" precision="FP16" type="Pooling">
 			<data auto_pad="valid" exclude-pad="true" kernel="2,2" pads_begin="0,0" pads_end="0,0" pool-method="max" strides="2,2"/>
 			<input>
 				<port id="0">
@@ -131,7 +131,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="7" name="conv2d_3/convolution" precision="FP32" type="Convolution">
+		<layer id="7" name="conv2d_3/convolution" precision="FP16" type="Convolution">
 			<data auto_pad="valid" dilations="1,1" group="1" kernel="3,3" output="64" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
@@ -150,11 +150,11 @@
 				</port>
 			</output>
 			<blobs>
-				<weights offset="19200" size="73728"/>
-				<biases offset="92928" size="256"/>
+				<weights offset="9600" size="36864"/>
+				<biases offset="46464" size="128"/>
 			</blobs>
 		</layer>
-		<layer id="8" name="conv2d_3/Relu" precision="FP32" type="ReLU">
+		<layer id="8" name="conv2d_3/Relu" precision="FP16" type="ReLU">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -172,7 +172,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="9" name="max_pooling2d_3/MaxPool" precision="FP32" type="Pooling">
+		<layer id="9" name="max_pooling2d_3/MaxPool" precision="FP16" type="Pooling">
 			<data auto_pad="valid" exclude-pad="true" kernel="2,2" pads_begin="0,0" pads_end="0,0" pool-method="max" strides="2,2"/>
 			<input>
 				<port id="0">
@@ -191,7 +191,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="10" name="flatten_1/Reshape" precision="FP32" type="Reshape">
+		<layer id="10" name="flatten_1/Reshape" precision="FP16" type="Reshape">
 			<data dim="1,64"/>
 			<input>
 				<port id="0">
@@ -208,7 +208,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="11" name="dense_1/MatMul" precision="FP32" type="FullyConnected">
+		<layer id="11" name="dense_1/MatMul" precision="FP16" type="FullyConnected">
 			<data out-size="256"/>
 			<input>
 				<port id="0">
@@ -223,11 +223,11 @@
 				</port>
 			</output>
 			<blobs>
-				<weights offset="93184" size="65536"/>
-				<biases offset="158720" size="1024"/>
+				<weights offset="46592" size="32768"/>
+				<biases offset="79360" size="512"/>
 			</blobs>
 		</layer>
-		<layer id="12" name="dense_1/Relu" precision="FP32" type="ReLU">
+		<layer id="12" name="dense_1/Relu" precision="FP16" type="ReLU">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -241,7 +241,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="13" name="dense_2/MatMul" precision="FP32" type="FullyConnected">
+		<layer id="13" name="dense_2/MatMul" precision="FP16" type="FullyConnected">
 			<data out-size="10"/>
 			<input>
 				<port id="0">
@@ -256,11 +256,11 @@
 				</port>
 			</output>
 			<blobs>
-				<weights offset="159744" size="10240"/>
-				<biases offset="169984" size="40"/>
+				<weights offset="79872" size="5120"/>
+				<biases offset="84992" size="20"/>
 			</blobs>
 		</layer>
-		<layer id="14" name="dense_2/Softmax" precision="FP32" type="SoftMax">
+		<layer id="14" name="dense_2/Softmax" precision="FP16" type="SoftMax">
 			<data axis="1"/>
 			<input>
 				<port id="0">
@@ -295,7 +295,7 @@
 	<meta_data>
 		<MO_version value="1.5.12.49d067a0"/>
 		<cli_parameters>
-			<data_type value="float"/>
+			<data_type value="FP16"/>
 			<disable_fusing value="False"/>
 			<disable_gfusing value="False"/>
 			<disable_nhwc_to_nchw value="False"/>
@@ -311,7 +311,7 @@
 			<input_shape value="[1,28,28,1]"/>
 			<k value="DIR/CustomLayersMapping.xml"/>
 			<legacy_mxnet_model value="False"/>
-			<log_level value="DEBUG"/>
+			<log_level value="ERROR"/>
 			<mean_values value="()"/>
 			<model_name value="ir_model"/>
 			<move_to_preprocess value="False"/>

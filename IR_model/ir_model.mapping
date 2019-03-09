@@ -1,10 +1,6 @@
 <?xml version="1.0" ?>
 <mapping>
 	<map>
-		<framework name="conv2d_1_input" out_port_id="0"/>
-		<IR id="0" name="conv2d_1_input" out_port_id="0"/>
-	</map>
-	<map>
 		<framework name="conv2d_1/BiasAdd" out_port_id="0"/>
 		<IR id="1" name="conv2d_1/convolution" out_port_id="3"/>
 	</map>
@@ -31,6 +27,10 @@
 	<map>
 		<framework name="conv2d_3/BiasAdd" out_port_id="0"/>
 		<IR id="7" name="conv2d_3/convolution" out_port_id="3"/>
+	</map>
+	<map>
+		<framework name="conv2d_3/Relu" out_port_id="0"/>
+		<IR id="8" name="conv2d_3/Relu" out_port_id="1"/>
 	</map>
 	<map>
 		<framework name="max_pooling2d_3/MaxPool" out_port_id="0"/>
@@ -61,7 +61,7 @@
 		<IR id="14" name="dense_2/Softmax" out_port_id="1"/>
 	</map>
 	<map>
-		<framework name="conv2d_3/Relu" out_port_id="0"/>
-		<IR id="8" name="conv2d_3/Relu" out_port_id="1"/>
+		<framework name="conv2d_1_input" out_port_id="0"/>
+		<IR id="0" name="conv2d_1_input" out_port_id="0"/>
 	</map>
 </mapping>
