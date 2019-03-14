@@ -56,10 +56,5 @@ history = model.fit(x_train, y_train, epochs=2, batch_size=128)
 
 print(model.evaluate(x_test, y_test))
 
-# Save model and weights to separated files.
-with open("./Keras_model/model.json", "w") as file:
-    file.write(model.to_json())
-model.save_weights("./Keras_model/weights.h5")
-
 # Save model and weights to the same file.
 model.save('./Keras_model/model.h5', include_optimizer=False)
