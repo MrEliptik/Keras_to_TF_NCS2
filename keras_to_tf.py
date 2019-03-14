@@ -1,9 +1,10 @@
-from keras.models import model_from_json
+from keras.models import load_model
 from keras import backend as K
 import tensorflow as tf
 
 model_file = "Keras_model/model.json"
 weights_file = "Keras_model/weights.h5"
+keras_model = "Keras_model/model.h5"
 
 def freeze_session(session, keep_var_names=None, output_names=None, clear_devices=True):
     """
@@ -40,8 +41,8 @@ with open(model_file, "r") as file:
 
 # loading keras model
 K.set_learning_phase(0)
-model = model_from_json(config)
-model.load_weights(weights_file)
+model = load_model(keras_model)
+#model.load_weights(weights_file)
 
 # create a frozen-graph of the keras model
 frozen_graph = freeze_session(K.get_session(),
