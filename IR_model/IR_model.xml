@@ -231,7 +231,7 @@
 			</output>
 		</layer>
 		<layer id="12" name="dense_1/MatMul" precision="FP16" type="FullyConnected">
-			<data out-size="512"/>
+			<data out-size="256"/>
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -241,25 +241,25 @@
 			<output>
 				<port id="3">
 					<dim>1</dim>
-					<dim>512</dim>
+					<dim>256</dim>
 				</port>
 			</output>
 			<blobs>
-				<weights offset="129984" size="1048576"/>
-				<biases offset="1178560" size="1024"/>
+				<weights offset="129984" size="524288"/>
+				<biases offset="654272" size="512"/>
 			</blobs>
 		</layer>
 		<layer id="13" name="activation_5/Relu" precision="FP16" type="ReLU">
 			<input>
 				<port id="0">
 					<dim>1</dim>
-					<dim>512</dim>
+					<dim>256</dim>
 				</port>
 			</input>
 			<output>
 				<port id="1">
 					<dim>1</dim>
-					<dim>512</dim>
+					<dim>256</dim>
 				</port>
 			</output>
 		</layer>
@@ -268,7 +268,7 @@
 			<input>
 				<port id="0">
 					<dim>1</dim>
-					<dim>512</dim>
+					<dim>256</dim>
 				</port>
 			</input>
 			<output>
@@ -278,8 +278,8 @@
 				</port>
 			</output>
 			<blobs>
-				<weights offset="1179584" size="10240"/>
-				<biases offset="1189824" size="20"/>
+				<weights offset="654784" size="5120"/>
+				<biases offset="659904" size="20"/>
 			</blobs>
 		</layer>
 		<layer id="15" name="activation_6/Softmax" precision="FP16" type="SoftMax">

@@ -2,6 +2,7 @@ from keras.models import Sequential
 from keras.models import load_model
 from keras.layers import Dense, Dropout, Flatten, Activation
 from keras.layers import Conv2D, MaxPooling2D
+from keras.layers.normalization import BatchNormalization
 from keras.datasets import mnist
 from keras.utils import to_categorical
 from keras import backend as K
@@ -22,22 +23,26 @@ model = Sequential()
 
 model.add(Conv2D(32, (3, 3), input_shape=(28,28,1)))
 model.add(Activation('relu'))
-
+BatchNormalization(axis=-1)
 model.add(Conv2D(32, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
+BatchNormalization(axis=-1)
 model.add(Conv2D(64,(3, 3)))
 model.add(Activation('relu'))
-
+BatchNormalization(axis=-1)
 model.add(Conv2D(64, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
 model.add(Flatten())
+# Fully connected layer
 
+BatchNormalization()
 model.add(Dense(256))
 model.add(Activation('relu'))
+BatchNormalization()
 model.add(Dropout(0.2))
 model.add(Dense(10))
 
