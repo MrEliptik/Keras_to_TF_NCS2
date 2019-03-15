@@ -13,7 +13,7 @@ def main():
     model_xml = "IR_model/IR_model.xml"
     model_bin = "IR_model/IR_model.bin"
 
-    # Plugin initialization for specified device and load extensions library if specified
+    # Plugin initialization for specified device
     plugin = IEPlugin(device="MYRIAD")
 
     # Read IR
