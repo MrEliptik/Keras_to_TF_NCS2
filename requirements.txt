@@ -65,7 +65,7 @@ sessioninstaller==0.0.0
 six==1.12.0
 system-service==0.3
 tensorboard==1.13.1
-tensorflow==1.13.1
+tensorflow==1.15.4
 tensorflow-estimator==1.13.0
 termcolor==1.1.0
 typed-ast==1.3.1
